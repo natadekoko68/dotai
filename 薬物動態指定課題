@@ -1,0 +1,208 @@
+---
+title: 薬物動態学レポート
+author: こたねこ
+fontsize: 11pt
+---
+
+<div style="text-align: center">
+<font size="6"> <b>薬物動態 指定課題</b> </font>
+</div>
+<br>
+<p align="right">薬学部 10230162 原光太朗</p>
+
+### 問題
+
+薬物 $A$ は、肝臓より $OATP1B1$ , $OATP1B3$ という $2$ つのトランスポーターおよび受動拡散による膜透過によって取り込まれた後、肝職内で代謝酵素 $X$ など複数の代謝酵素により代謝され、すべて代謝物として服汁排泄されることが明らかにされており、未変化体としての腎排泄は無視できると考えられている。一方で、 $OATP1B1$ をコードする遺伝子 $（SLCO7BT）$ には、 $c.521T$>$C$  $(p.174Val$>$Ala)$ 変異の存在が知られており、この変異を有する場合、 $OATP1B1$ の輸送活性は野生型の $20$ %に低下することが $in$ $vitro$ 実験の結果から推察されている。
+一方、薬物 $I$ は、 $OATP1B3$ に対してのみ競合阻害することが知られている。
+あらかじめ薬物 $I$ を定速静脈内投与して、薬物 $I$ の血中濃度が定常状態に達したところで、薬物 $A$ を経口投与したところ、 $SLCO1B1$ 遺伝子を野生型のホモで有するヒトでは、薬物 $A$ 単独投与時と比較して、薬物 $I$ の共存により、薬物 $A$ の血中 $AUC$ は $1.6$ 倍に上昇した。一方で、$SLCO1B1$ 遺伝子を $c.521T$>$C$ 変異型のホモで有するヒトでは、薬物 $A$ 単独投与時と比較して、薬物 $I$ の共存により、薬物 $A$ の血中 $AUC$ は $2.7$ 倍に上昇した。
+なお、薬物 $I$ は、薬物 $A$ の消化管吸収にはなんら影響を与えないことが知られている。また、薬物 $A$ の消化管吸収性は極めていいことから、消化管アベイラビリティ ($F_{a}F_{g}$) は $1$ としてよい。
+以下の問いに答えなさい。
+
+1. 薬物 $I$ の共存により、薬物 $A$ の肝固有クリアランスは、何%まで減少するか求めなさい。
+    <解答>
+    $$
+    AUC_{po} = \frac{FD}{CL_{tot}}\\[10pt]
+    CL_{tot} = F_{h} \cdot f_{B}CL_{h,int} 
+    $$
+    が成立するから、
+    $$
+    \frac{AUC_{po}^{I}}{AUC_{po}} = \frac{\frac{FD}{CL_{tot}^{I}}}{\frac{FD}{CL_{tot}}} = 1.6\\[10pt]
+    \therefore \:
+    \frac{{CL_{tot}^{I}}}{{CL_{tot}}} = \frac{1}{1.6}\\[10pt]
+    \frac{{CL_{tot}^{I}}}{{CL_{tot}}} = \frac{F_{h} \cdot f_{B}CL_{h,int}^{I}}{F_{h} \cdot f_{B}CL_{h,int}}  \\[10pt]
+    \therefore \:
+    \frac{CL_{h,int}^{I}}{CL_{h,int}} = \frac{1}{1.6} \fallingdotseq 0.625 = 62.5 \%
+    $$
+    よって <u><span style="font-size:14pt;"> **62.5%** </span></u>まで減少する。
+
+    <br>
+
+2. 薬物 $I$ の定常状態における血中濃度が $10μM$ , 薬物 $I$ の血中蛋白非結合系薬物分率が $0.1$ , 薬物 $I$ の阻害定数 ( $K_{i}$ ) が $0.25 \mu M$ の時、薬物 $I$ の共存下において薬物 $A$ の肝取り込み固有クリアランス全体に占める $OATP1B3$ を介した輸送固有クリアランスは、何%まで減少するか求めなさい。
+    <解答>
+    競合阻害薬非存在下での基質輸送速度は
+    $$
+    v = \frac{V_{max}C_{u}}{K_{m}+C_{u}}
+    $$
+    競合阻害薬存在下での基質輸送速度は
+    $$
+    v = \frac{V_{max}C_{u}}{K_{m}(1+\frac{I}{K_{i}})+C_{u}}
+    $$
+    で表される。
+
+    $K_{i}= 0.25μM$、$I=10μM$であることから、
+    $$
+    \frac{CL_{m,int}^{I}}{CL_{m,int}} = \frac{v^{I}}{C_{u}} \cdot \frac{C_{u}}{v} = \frac{v^{I}}{v}\\[10pt]
+
+    \frac{CL_{m,int}^{I}}{CL_{m,int_{A}}} = \frac{\frac{V_{max}C_{u}}{K_{m}(1+\frac{I}{K_{i}})+C_{u}}}{\frac{V_{max}C_{u}}{K_{m}+C_{u}}}\\[10pt]
+
+    \therefore
+    \frac{CL_{m,int}^{I}}{CL_{m,int}} = \frac{K_{m}+C_{u}}{{K_{m}(1+\frac{I}{K_{i}})+C_{u}}}
+    $$
+
+    $K_{m} \gg C_{u}$ であるので、
+
+    $$
+    \frac{CL_{m,int}^{I}}{CL_{m,int}} \fallingdotseq  \frac{1}{1+\frac{I}{K_{i}}}
+    = \frac{1}{1+\frac{10\cdot 10^{-6}\cdot 0.1}{0.25\cdot 10^{-6}}} = 20\%
+    $$
+
+    つまり、$OATP1B3$ を介した輸送固有クリアランスは、<u><span style="font-size:14pt;"> **20%** </span></u>まで減少する。
+
+    <br>
+
+3. $SLCO1B1$ 遺伝子の野生型をホモで有する人において、薬物 $A$ の 肝取り込み固有クリアランス全体に占める $OATP1B3$ の寄与率は何%か求めなさい。
+    <解答>
+    $OATP1B1$ の輸送活性を $A_{OATP1B1}$ , $OATP1B3$ の輸送活性を $A_{OATP1B3}$ , その他の輸送の活性を $A_{others}$ とする。
+    便宜上、
+    $$
+    A_{OATP1B1} + A_{OATP1B3} + A_{others} = 1
+    $$ 
+    とする。
+    $SLCO1B1$ 遺伝子の野生型をホモで有する人は、薬物 $I$ の添加により、$A_{OATP1B3}$ の活性は $20\%$ まで減少する。また、全体の活性は$\frac{1}{1.6} = \frac{5}{8}$に低下する。
+    つまり、
+    $$
+    A_{OATP1B1} + \frac{1}{5} \cdot A_{OATP1B3} + A_{others} = \frac{5}{8}
+    $$
+    が成立する。
+    よって、
+    $$
+    \frac{4}{5} \cdot A_{OATP1B3} = \frac{3}{8}\\[10pt]
+    \therefore A_{OATP1B3} = \frac{15}{32}
+    $$
+    さらに、$SLCO1B1$ 遺伝子の変異型をホモで有する人は、$A_{OATP1B1}$ の活性が $20\%$ まで低下する。さらに薬物 $I$ の添加により、$A_{OATP1B3}$ の活性は $20\%$ まで減少する。その結果、全体の活性は$\frac{1}{2.7} = \frac{10}{27}$ に低下する。
+    つまり、
+    $$
+    \frac{10}{27} \cdot \biggl[ \frac{1}{5} \cdot A_{OATP1B1} + A_{OATP1B3} + A_{others} \biggr] =\\[10pt]
+    \frac{1}{5} \cdot A_{OATP1B1} + \frac{1}{5} \cdot A_{OATP1B3} + A_{others}
+    $$
+    ここで
+    $$
+    A_{OATP1B3} = \frac{15}{32}\\[10pt]
+    A_{others} = \frac{17}{32} - A_{OATP1B1}
+    $$
+    を利用して、解くと
+    $$
+    \begin{pmatrix}
+    A_{OATP1B1}\\[5pt]
+    A_{OATP1B3}\\[5pt]
+    A_{others}\\[5pt]
+    \end{pmatrix}
+
+    = 
+
+    \begin{pmatrix}
+    \frac{275}{544}\\[5pt]
+    \frac{15}{32}\\[5pt]
+    \frac{7}{272}\\[5pt]
+    \end{pmatrix} 
+    
+    \fallingdotseq
+
+    \begin{pmatrix}
+    0.506\\[5pt]
+    0.469\\[5pt]
+    0.0257\\[5pt]
+    \end{pmatrix}\\[10pt]
+
+    $$
+    を得る。
+
+    よって、$SLCO1B1$ 遺伝子の野生型をホモで有する人において、薬物 $A$ の肝取り込み固有クリアランス全体に占める $OATP1B3$ の寄与率は <u><span style="font-size:14pt;"> **46.9%** </span></u>である。
+
+    <br>
+
+4. $SLCO1B1$ 遺伝子の野生型をホモで有する人において、薬物 $A$ の 肝取り込み固有クリアランス全体に占める $OATP1B1$ の寄与率は何%か求めなさい。
+    <解答>
+    3の議論の結果より、
+    $SLCO1B1$ 遺伝子の野生型をホモで有する人において、薬物 $A$ の肝取り込み固有クリアランス全体に占める $OATP1B1$ の寄与率は <u><span style="font-size:14pt;"> **50.6%** </span></u>である。
+
+    <br>
+
+5. 薬物 $A$ がもし仮に経口投与ではなく静脈内投与されていた場合、薬物 $I$ の併用による薬物 $A$ の血中 $AUC$ の上昇割合は、本問の値より大きくなるか?小さくなるか?簡単に理由を添えて答えなさい。
+    <解答>
+    <br>
+
+    $$
+    AUC_{iv} = \frac{Dose}{F_{h} \cdot f_{B} \cdot CL_{h,int}}\\[10pt]
+    AUC_{po}　= \frac{Dose}{f_{B} \cdot CL_{h,int}} 
+    $$
+
+    <!-- $$
+    AUC_{iv} = \frac{Dose}{CL_{h}} = \frac{Dose}{F_{h} \cdot f_{B} \cdot CL_{h,int}}\\[10pt]
+    AUC_{po} = \frac{F \cdot Dose}{CL_{h}} = \frac{F_{h} \cdot Dose}{F_{h} \cdot f_{B} \cdot CL_{h,int}} 
+    = \frac{Dose}{f_{B} \cdot CL_{h,int}} 
+    $$ -->
+
+    $$
+    \frac{\frac{AUC_{iv}^{I}}{AUC_{iv}}}{\frac{AUC_{po}^{I}}{AUC_{po}}} = \frac{\frac{F_{h} \cdot CL_{h,int}}{F_{h}^{I} \cdot CL_{h,int}^{I}}}{\frac{CL_{h,int}}{CL_{h,int}^{I}}}
+    = \frac{F_{h}}{F_{h}^{I}}\\[10pt]
+    \frac{F_{h}}{F_{h}^{I}}=\frac{\frac{Q_{H}}{Q_{H} + f_{B} \cdot CL_{H,int}}}{\frac{Q_{H}}{Q_{H} + f_{B} \cdot CL_{H,int}^{I}}}
+    = \frac{Q_{H} + f_{B} \cdot CL_{H,int}^{I}}{Q_{H} + f_{B} \cdot CL_{H,int}}\\[10pt]
+    $$
+    1.より
+    $$
+    \frac{CL_{h,int}^{I}}{CL_{h,int}} = 62.5 \%\\[10pt]
+    \therefore \: 
+    CL_{h,int}^{I}<CL_{h,int}
+    $$
+    であるから、
+    $$
+    \frac{\frac{AUC_{iv}^{I}}{AUC_{iv}}}{\frac{AUC_{po}^{I}}{AUC_{po}}}<1
+    $$
+    と言える。
+    つまり、 薬剤 $I$ の添加による $AUC$ の増加は静脈投与にすることで<u><span style="font-size:14pt;"> **小さくなる** </span></u>と言える。
+    <br>
+
+6. 肝代謝酵素 $X$ のみの阻害剤 $J$ を定速静脈内投与により併用投与したとき、肝代謝酵素 $X$ のみによって代謝され、トランスポーターを介さない膜透過をする薬物 $B$ の経口投与後の血中 $AUC$ は $5$ 倍になった。 $J$ を上記と同じ投与条件で薬物 $A$ と併用投与したとき、経口投与された薬物 $A$ の血中 $AUC$ の有意な上昇は観察されなかった。その原因としてあり得る理由を複数考慮しなさい。但し、代謝酵素 $X$ は肝臓のみ局在するものとする。
+    <解答>
+    まず、代謝に占める肝代謝酵素 $X$ の寄与率を考察する。
+    薬物 $A$ は複数の代謝酵素により代謝されるとされている。そのため、薬物 $A$ の代謝に占める肝代謝酵素 $X$ の寄与率が小さい可能性が考えられる。この場合、肝代謝酵素 $X$ が阻害されても、薬物 $A$の代謝が別の代謝酵素により実現し、結果として $AUC$ はさほど変化しないことが予想される。
+    一方、薬物 $B$ の代謝に占める肝代謝酵素 $X$ の寄与率は大きい可能性がある。この結果、肝代謝酵素 $X$ の阻害による効果を受けやすく $AUC$ を上昇させたと考えられる。
+    <br>
+    次に、肝固有クリアランスの影響を考える。 
+    肝固有クリアランスの律速段階の影響が考えられる。肝固有クリアランスは、
+    ①肝臓への取り込み ($PS_{inf}$)
+    ②血液への再合流 ($PS_{eff}$)
+    ③胆汁側への排出 ($CL_{bile}$)
+    ④肝臓内での代謝 ($CL_{met}$)
+    の4過程からなり、肝固有クリアランスは次の式によって表される。
+    $$
+    CL_{int,all} = PS_{inf} \times \frac{CL_{bile} + CL_{met}}{PS_{eff} + CL_{bile} + CL_{met}}
+    $$
+    また、それぞれの変数について、
+    - $PS_{eff} \ll (CL_{bile} + CL_{met})$ のとき、
+    $$
+    CL_{int,all} \fallingdotseq PS_{inf}
+    $$
+
+    - $PS_{eff} \gg (CL_{bile} + CL_{met})$ のとき、
+    $$
+    CL_{int,all} \fallingdotseq PS_{inf} \times \frac{CL_{bile}+CL_{met}}{PS_{eff}}
+    $$
+    が成立する。
+    このことから、薬剤 $A$ と薬剤 $B$ の肝固有クリアランスはそれぞれ律速段階が異なる（つまり、変数の大小関係が異なる）と考えられる。
+    この4変数の中で、阻害剤 $J$ により変動する要素は $CL_{met}$ のみと考えられる。つまり、阻害剤 $J$ の投与により血中 $AUC$ の有意な上昇は観察されない薬物 $A$ は取り込み律速 ($PS_{eff} \ll (CL_{bile} + CL_{met})$ の関係式が成立している) と考えられる。この場合、阻害剤 $J$ 投与後も 肝固有クリアランスは $CL_{int,all} \fallingdotseq PS_{inf}$ の関係を維持しており、肝固有クリアランスの逆数に依存する $AUC$ も有意には上昇しないものと考えられる。
+    対して、薬物 $B$ はクリアランス律速 ($PS_{eff} \gg (CL_{bile} + CL_{met})$) であると考えられる。さらに、$CL_{bile}$も小さいと考えられる。 そのため、肝固有クリアランスは、阻害剤の影響で$CL_{met}$が減少するとともに$\frac{1}{5}$まで減少し、その結果、肝固有クリアランスの逆数に依存する $AUC$ も $5$ 倍になったと考えられる。
+
+
+
